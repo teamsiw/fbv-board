@@ -1,0 +1,29 @@
+{% extends 'board/base.html' %}
+{% block title %}내용{% endblock %}
+{% block content %}
+<table border="1">
+    <tr>
+        <th>등록일</th>
+        <th>조회수</th>        
+    </tr>
+    <tr>
+        <td>{{board.regdate}}</td>
+        <td>{{board.readcount}}</td>
+    </tr>
+    <tr>
+        <td>제목</td>
+        <td>{{board.title}}</td>
+    </tr>
+    <tr>
+        <td>작성자</td>
+        <td>{{board.writer}}</td>
+    </tr>
+    <tr>
+        <td>내용</td>
+        <td>{{board.content}}</td>
+    </tr>
+</table>
+<a href="#"><button>수정</button></a>
+<a href="#"><button>삭제</button></a>
+<a href="{% url 'board:list' %}"><button>목록</button></a>
+{% endblock %}
